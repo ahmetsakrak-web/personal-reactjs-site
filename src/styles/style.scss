@@ -1,0 +1,613 @@
+@import "./variable.scss";
+
+:root{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,33,136,0.7547969871542367) 56%, rgba(23,124,193,1) 100%);
+      color: $paragraph-color;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.myClass::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f008";
+  font-weight: 900;
+}
+.fizik{
+  color: #87cefa;
+}
+
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+
+
+.container{
+  max-width: $container-width;
+  margin: 0px auto; 
+  
+}
+
+a{
+  text-decoration: none;
+  font-size: 0.7em;
+}
+
+
+p{
+  font-weight: 300;
+  color: $paragraph-color;
+  line-height: 1.6em;
+  font-size: 1rem;
+  letter-spacing: .03em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+img{
+  box-shadow: 0px 0px 19px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+h3,h1{
+  color: $title-color;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: .02em;
+  margin-top:1.3rem;
+  margin-bottom:.3rem;
+  text-align: center;
+}
+
+//----------------------------Utilities-----------------------------------------
+.vurgu{
+  display: block;
+  padding: 30px;
+  margin: 20px;
+  border-left: $title-color 1px solid;
+  color: wheat;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.labels{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 12px 12px 0 12px;
+  label{
+    text-align: center;
+    padding: 3px 6px;
+    border-radius: 7px;
+    font-size: 13px;
+    }
+}
+
+
+
+.large {
+  font-size: 30px;
+  text-align: left;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+//---------------------Drop Down-------------------------------------
+.dropDown{
+  position: plative;
+  display: inline-block;
+ 
+}
+.dropDown > a{
+ border-bottom: none;
+ 
+}
+.dropDownContent{
+  display: none;
+  position: absolute;
+  min-width: 170px;
+  z-index: 1;
+  margin-top: 10px;
+  text-align: left;
+}
+.dropDownContent a{
+  display: block;
+  font-size: .7em;
+  background-color: $primary-color;
+  margin-top: 1px;
+  &:hover{
+    color:$title-color
+  }
+}
+.dropDown:hover .dropDownContent {
+  display: block;
+ 
+
+}
+
+//---------------------Navbar-----------------------------------
+nav{
+  
+    font-size: 22px;
+    background-color: $nav-color;
+    margin-bottom: 50px;
+    padding: 5px;
+     
+}
+
+nav .nav-container{
+  max-width: $container-width;
+  margin: 0px auto; 
+  
+}
+
+
+nav a{
+  color: #e8e8e8;
+}
+
+nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+
+nav div ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav div ul li{
+    list-style: none;
+    cursor: pointer;
+    margin: 10px 20px;
+}
+
+
+.navLink{
+  border:2px solid $primary-color;  
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.link{
+  padding: 10px 20px;
+  
+  transition: all ease .333s;
+  &:hover{
+    color: $title-color;
+    border:3px solid $primary-color;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+    
+}
+
+
+
+//------------------------- Masonry ----------------------------------------------
+.my-masonry-grid {
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+  }
+  
+  //------------------------- Card -------------------------------------------
+  .my-masonry-grid_column  .card { 
+    background-color: $secondary-color;
+    margin-bottom: 30px;
+    padding: 20px 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    transition: all .3s ease-in-out;
+    
+      &:hover{
+        background-color: $primary-color-hover;
+        transform: scale(1.1);
+      }
+     div p{
+      text-align: left;
+      margin-left: 30px;
+      font-size: .8rem;
+    }
+      
+     .labels{
+      margin-left: 15px;
+    }
+  animation-name: cardExist;
+  animation-duration: 1s;
+  }
+@keyframes cardExist {
+  from{transform: scale(0.5); }
+  to{transform: scale(1);}
+}
+
+
+.card img{
+    width: 80%;
+    margin: 20px 0;
+    border-radius: 10%;
+   
+ 
+}
+
+//-----------------------------One Page------------------------------------------------------
+.onePage {
+  max-width: 700px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f6ee1f;
+  padding: 1rem;
+  border-radius: 1rem;
+      .labels {
+        border-top: $secondary-color 3px solid;
+        margin: 40px 0;
+            a {
+              margin-top: 20px;
+              display: inline-block;
+              
+            }
+            label{
+              text-align: center;
+              cursor: pointer;
+              padding: 10px 20px;
+              border-radius: 7px;
+              transition: all ease .333s;
+              font-size: 1rem;
+              }
+      } 
+
+      .text{
+        font-size: large;
+         & a{
+        
+            color: #b9f2ff;
+            text-decoration: underline;
+          
+         }
+      }
+
+     
+
+      p{
+        margin-bottom: 15px;
+      }
+
+      .L-img{
+        max-height: 75vh;
+        object-fit: cover;
+        margin: 20px 0;
+        display: block;
+        
+      }
+}
+
+
+// ------------------------------------------------------------------Hakkımda ------------------------------------------------------
+
+.hakkımda{
+  font-size: 22px;
+  overflow-y: hidden;
+ & a{
+    color: #b9f2ff;
+    text-decoration: underline;
+    font-size: large;
+  }
+ article{
+  padding: 1.2rem 0;
+  background-color: $primary-color;
+  transition: all .333s ease-in-out;
+  text-align: center;
+  border-radius: 20px;
+  transition: all 255ms ease-in;
+    -moz-transition: all 255ms ease-in;
+    -webkit-transition: all 255ms ease-in;
+
+    animation-name: experienceAppers;
+    animation-duration: 2s;
+    animation-iteration-count:1;
+ }
+  
+  article:hover {
+    content: " ";
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    background-color: $primary-color-hover;
+    opacity: 1;
+  }
+  
+  article:hover:before {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+ 
+
+  h5{
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+  .deneyimler {
+    display: grid;
+    margin: 2rem auto;
+    width: 70%;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+   
+    gap: 2rem;
+    padding: 2rem;
+   
+  }
+
+  .deneyim{
+    display: flex;
+   
+    div{
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    small{
+      font-weight: 200;
+      font-family: 'Montserrat', sans-serif;
+    }
+    svg{
+      color: #050833;
+      margin-top: 6px;
+    }
+    
+  }
+
+}
+
+//-------------------------------------Projelerim---------------------------------------
+.projeler{
+  margin: 5rem 0;
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+  background-color: $secondary-color;
+  animation-name: projectsAppers;
+  animation-duration: 2s;
+  animation-iteration-count:1;
+  div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    
+ .proje{
+  border-radius: 20px;
+  transition: all .33s ease-in-out;
+  position: relative;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  &:hover {
+    transform: translateY(10px)
+  }
+  &:hover .icerik{
+    opacity: 1;
+
+  }
+}
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  
+    
+  }
+ 
+  .icerik{
+    background-color: rgba(black, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+   
+    h3{
+     
+      color: $primary-color-hover;
+     
+    }
+    .teknolojiler{
+    
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $paragraph-color;
+      font-size: large;
+      font-weight: 700;
+      padding-left: 30px;
+    }
+  }
+  
+  }
+
+ 
+  
+}
+
+
+//------------------------------------ Hobbies --------------------------------------
+.hobbies{
+  margin: 5rem;
+}
+
+
+
+
+
+
+//-------------------  Media -------------------------------------
+@media only screen and (max-width: 890px) {
+  nav{
+    padding: 1rem
+  }
+  nav .nav-container{
+      max-width: 100%;
+      align-items: unset;
+      & ul li{
+          margin: 0;
+         
+      }
+      & a{
+        font-size: .8em
+      }
+  }
+ .hakkımda .deneyimler{
+    grid-template-columns: repeat(2, 1fr);
+  }
+ }
+ @media screen and (max-width: 650px) {
+  .hakkımda .deneyimler{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+   
+  }
+ }
+
+
+  @media screen and (max-width: 475px) {
+    .container{
+      max-width: 90%;
+    }
+
+    //--------------- Navbar -------------------------
+    nav{
+      padding: 0px;
+    }
+    nav .nav-container{
+      display: block;
+      
+      max-width: 100%;
+      
+    }
+    nav div ul {
+      display: block;
+    }
+    nav div ul li{
+      margin: 0px;
+    }
+    nav .link, .dropDown{
+      text-align: center;
+      display: block;
+      
+    }
+    nav .link, .dropDownContent{
+      margin: 0px;
+    }
+  
+
+  //----------------------- Drop Down ----------------
+    .dropDownContent{
+     position: static;
+      &:hover{
+        display: block;
+      }
+    
+    }
+    .dropDownContent a{
+      background-color:$nav-color;
+    }
+
+
+  //--------------- One Page -------------------------
+    .onePage {
+      
+      margin: 0px auto;
+    }
+  
+
+
+  //--------------- Masonry -------------------------
+    .my-masonry-grid{
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      padding:0;
+      
+    }
+    .my-masonry-grid_column{
+      padding-left: 0;
+    }
+
+  //--------------- Utilities -------------------------
+    .labels{
+      justify-content: center;
+     
+    }
+    .onePage .labels {
+      justify-content: left;
+    }
+
+    span{
+      margin-bottom: 10px;
+    }
+
+    //-------------- Hakkımda -----------------------------
+    .hakkımda{
+      .deneyimler{
+        padding-left: 10px;
+      }
+     & .projeler{
+      width: 100%;
+      border-radius: 10px;
+      padding: 10px;
+      }
+    }
+  }
+  
+ 
+
+
+
+//-------Animations----------------------
+@keyframes experienceAppers {
+  from{
+    transform: translateX(-100vh);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+
+@keyframes projectsAppers {
+  from{
+    transform: translateX(1000px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
